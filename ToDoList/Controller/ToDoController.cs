@@ -19,16 +19,21 @@ namespace ToDoList.Controller
             return _context.ToDos.ToList();
         }
 
-        public static void AddToDoItem(ToDo todo)
+        public static void AddToDoItem(ToDo toDo)
         {
             var _context = new ToDoListDbContext();
-            _context.ToDos.Add(todo);
+            _context.ToDos.Add(toDo);
             _context.SaveChanges();
 
         }
         public static void UpdateToDoItem()
         {
             var _context = new ToDoListDbContext();
+
+        }
+
+        public static void DeleteToDoItem(ToDo toDo)
+        {
 
         }
     
