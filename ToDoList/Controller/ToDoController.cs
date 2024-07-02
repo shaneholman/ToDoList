@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ToDoList.Controller
 {
-    internal class ToDoController
+    public class ToDoController
     {
         
 
@@ -16,17 +16,24 @@ namespace ToDoList.Controller
         {
             var _context = new ToDoListDbContext();
             var defaultDueDate = DateTime.Today;
-
-
+            var ans = Convert.ToInt32(Console.ReadLine());
+            var toDoDescription = ans; 
+            
             var newToDo = new ToDo
             {
                 Id = 0,
-                Description = "",
+                Description = $"{toDoDescription}",
                 DueDate = defaultDueDate,
                 Status = "Active",
                 Priority = "Medium"
             };
         }
+        static void UpdateToDoItem()
+        {
+            var _context = new ToDoListDbContext();
+
+        }
+    
     }
    
 }
