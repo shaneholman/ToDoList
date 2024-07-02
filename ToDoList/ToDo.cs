@@ -16,7 +16,7 @@ namespace ToDoList
        
         public DateTime DueDate { get; set; }
 
-        public string Status { get; set; } = default (Active);
+        public string Status { get; set; } = "Active";
 
         public string Priority { get; set; } = string.Empty;
     }
