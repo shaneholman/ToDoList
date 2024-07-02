@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ToDoList.Controller;
 
 namespace ToDoList
 {
@@ -7,6 +8,7 @@ namespace ToDoList
         static void Main(string[] args)
         {
             var _context = new ToDoListDbContext();
+            
 
 
         }

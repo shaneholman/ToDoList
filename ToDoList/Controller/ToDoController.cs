@@ -10,8 +10,11 @@ namespace ToDoList.Controller
 {
     public class ToDoController
     {
+
+        
        public static ToDoListDbContext _context = new ToDoListDbContext();
-        public static List<ToDo> getalltodos()
+        
+        public static List<ToDo> GetAllToDos()
         {
             return _context.ToDos.ToList();
         }
@@ -19,11 +22,9 @@ namespace ToDoList.Controller
         public static void AddToDoItem(ToDo todo)
         {
             var _context = new ToDoListDbContext();
-            var defaultDueDate = DateTime.Today;
-            var ans = Convert.ToInt32(Console.ReadLine());
-            var toDoDescription = ans; 
-            
-         
+            _context.ToDos.Add(todo);
+            _context.SaveChanges();
+
         }
         public static void UpdateToDoItem()
         {

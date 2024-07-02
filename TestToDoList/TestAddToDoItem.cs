@@ -5,22 +5,23 @@ namespace TestToDoList
     public class TestToDoList
     {
         [Fact]
+        public void TestAddToDoItem()
+        {
+            var toDos = ToDoController.GetAllToDos();
+                Assert.Equal(toDos.Count, 0);
 
-       
-public void TestAddToDoItem(){
-            Assert.Equal(toDos.Count, 0)
             var newToDo = new ToDo
             {
                 Id = 0,
-                Description = $"{toDoDescription}",
-                DueDate = defaultDueDate,
+                Description = "test",
+                DueDate = DateTime.Now.AddDays(7),
                 Status = "Active",
                 Priority = "Medium"
             };
+            
             ToDoController.AddToDoItem(newToDo);
-            var toDos = ToDoController.getalltodos();
-
-            Assert.Equal(toDos.Count,1)
+            toDos = ToDoController.GetAllToDos();
+            Assert.Equal(toDos.Count, 1);
         }
 
 
