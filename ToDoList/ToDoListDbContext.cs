@@ -16,9 +16,9 @@ namespace ToDoList
         }
 
         public ToDoListDbContext(DbContextOptions<ToDoListDbContext> options) : base(options)
-        { 
-        }
+        {
 
+        }
 
         public virtual DbSet<ToDo> ToDos { get; set; }
 
