@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 
 namespace ToDoList
 {
-    internal class ToDo{
+    public class ToDo{
+
+        public int Id { get; set; }
 
         [StringLength(80)]
         public string Description { get; set; } = string.Empty;
