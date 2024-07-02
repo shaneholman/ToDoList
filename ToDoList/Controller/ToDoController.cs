@@ -10,25 +10,22 @@ namespace ToDoList.Controller
 {
     public class ToDoController
     {
-        
+       public static ToDoListDbContext _context = new ToDoListDbContext();
+        public static List<ToDo> getalltodos()
+        {
+            return _context.ToDos.ToList();
+        }
 
-        static void AddToDoItem()
+        public static void AddToDoItem(ToDo todo)
         {
             var _context = new ToDoListDbContext();
             var defaultDueDate = DateTime.Today;
             var ans = Convert.ToInt32(Console.ReadLine());
             var toDoDescription = ans; 
             
-            var newToDo = new ToDo
-            {
-                Id = 0,
-                Description = $"{toDoDescription}",
-                DueDate = defaultDueDate,
-                Status = "Active",
-                Priority = "Medium"
-            };
+         
         }
-        static void UpdateToDoItem()
+        public static void UpdateToDoItem()
         {
             var _context = new ToDoListDbContext();
 
